@@ -15,24 +15,23 @@ def configure_logging():
     logging.basicConfig(level=logging.DEBUG, handlers=handlers)
     return logging.getLogger(os.path.basename(__file__))
 
-def main():
+def main(a, b):
+    log = configure_logging()
+
     app = Flask(__name__)
     app.config['DEBUG'] = True
-    app.config['HOST'] = '0.0.0.0'
     app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-    socketio = SocketIO(app)
-
-    log = configure_logging()
+    socketio = SocketIO(app, logger=log, engineio_logger=log)
 
     try:
         routes.configure_routes(log, app)
         sockets.configure_sockets(log, socketio)
         log.debug('starting socketio')
-        socketio.run(app, allow_unsafe_werkzeug=True)
+        socketio.run(app, host='0.0.0.0', port=5000)
     except Exception as exc:
         log.error(exc)
         raise exc
 
 if __name__ == '__main__':
-    main()
+    main(1, 2)

@@ -2,10 +2,8 @@ FROM python:3.11.5-alpine
 
 WORKDIR /usr/src/app
 
-COPY src/requirements.txt ./
+COPY src/. /usr/src/app 
 RUN pip install --no-cache-dir -r requirements.txt
-
-COPY src/. ./
 
 EXPOSE 5000
 

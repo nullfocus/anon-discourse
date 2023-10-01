@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>anon-discourse</title>
+</head>
+
+<body>
+    <h1>
+        welcome to anon-discourse!
+    </h1>
+
+    <form action="./">
+        start a new anonymous chat:
+
+        <input type="hidden" name="c" value="{{channel}}"></input>
+
+        <input type="submit" value="start"></input>
+    </form>
+
+    <p>
+        or
+    </p>
+
+    <form>
+        join an existing chat:
+
+        <input type="text" name="c"></input>
+        <input type="submit" value="join"></input>
+    </form>
+
+
+    <link rel="stylesheet" type="text/css" href="./static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+</body>
+
+</html>

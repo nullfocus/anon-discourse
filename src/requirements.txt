@@ -1,2 +1,4 @@
-Flask==2.2.3
+Flask==3.0.0
 flask-socketio==5.3.6
+gunicorn==21.0.1
+eventlet==0.33.3    

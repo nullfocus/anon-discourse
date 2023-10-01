@@ -1,6 +1,7 @@
-from flask import render_template, send_from_directory
+from flask import render_template, send_from_directory, request
 import html
 import os
+import uuid
 
 def configure_routes(log, app):
     
@@ -45,6 +46,17 @@ def configure_routes(log, app):
 
     @app.route('/')
     def index():
-        return render_template('index.html')
-    
+        channel = request.args.get('c')
 
+        if channel == None or channel.strip() ==  '':
+            log.debug('no channel requested, returning landing page')
+
+            channel = str(uuid.uuid4())
+
+            return render_template('landing.html', channel=channel)
+        else:
+            log.debug('channel requested: ' + channel)
+
+            channel = html.escape(channel)
+            
+            return render_template('chat.html', channel=channel)

@@ -4,6 +4,7 @@ A wholly-independent webapp which allows a group to spin up an anonymous chat gr
 
 ## Setup
 
+- prerequisit of docker and docker-compose installed
 - clone locally
 - run `make run`
 - browse to [localhost:5000](http://localhost:5000) or [your ip]:5000

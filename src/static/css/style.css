@@ -8,6 +8,15 @@ body, *{
     height: 100%;
 }
 
+#landing {
+    padding: 1em;
+}
+
+#landing h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
 #message_container {
     position:relative;
     top: 0em;
@@ -15,7 +24,6 @@ body, *{
     overflow-y: auto;
     overflow-x: hidden;
     scroll-behavior: auto;
-
 }
 
 #message_list {

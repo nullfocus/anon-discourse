@@ -2,7 +2,14 @@
 
 A wholly-independent webapp which allows a group to spin up an anonymous chat group and invite others.
 
+## Setup
+
+- clone locally
+- run `make run`
+- browse to [localhost:5000](http://localhost:5000) or [your ip]:5000
+
 ## Todo
+
 
 ### mvp functionality
 - [x] Host and route to shared channels
@@ -14,6 +21,7 @@ A wholly-independent webapp which allows a group to spin up an anonymous chat gr
 
 ### larger efforts
 - [x] Leverage "prod ready" server, like nginx, gunicorn, etc
+- [ ] Identify approach for including SSL cert 
 - [ ] Integrate crypto, perhaps include "password" to encrypt/decrypt chat contents
 - [ ] Improve configurations by leveraging .env file and python dotenv library
 - [ ] Introduce testing library, refactor code to be more testable (DI, IoC, etc)

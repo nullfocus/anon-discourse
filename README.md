@@ -18,6 +18,9 @@ A wholly-independent webapp which allows a group to spin up an anonymous chat gr
 - [x] Format chat-box-like
 
 ### housekeeping
+- [x] Linter! 
+- [ ] Tests!
+- [ ] Improved logging
 - [ ] Get rid of page() function and use templates
 
 ### larger efforts
@@ -26,4 +29,4 @@ A wholly-independent webapp which allows a group to spin up an anonymous chat gr
 - [ ] Integrate crypto, perhaps include "password" to encrypt/decrypt chat contents
 - [ ] Improve configurations by leveraging .env file and python dotenv library
 - [ ] Introduce testing library, refactor code to be more testable (DI, IoC, etc)
-- [ ] Extensive logging
+

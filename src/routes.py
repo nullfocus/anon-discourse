@@ -3,8 +3,8 @@ import html
 import os
 import uuid
 
+
 def configure_routes(log, app):
-    
     def page(title, content):
         content = str(content)
         content = html.escape(content)
@@ -37,26 +37,29 @@ def configure_routes(log, app):
     @app.errorhandler(Exception)
     def all_exception_handler(error):
         log.debug(error)
-        return page("500", error), 500 
+        return page("500", error), 500
 
-    @app.route('/favicon.ico')
+    @app.route("/favicon.ico")
     def favicon():
-        return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+        return send_from_directory(
+            os.path.join(app.root_path, "static"),
+            "favicon.ico",
+            mimetype="image/vnd.microsoft.icon",
+        )
 
-    @app.route('/')
+    @app.route("/")
     def index():
-        channel = request.args.get('c')
+        channel = request.args.get("c")
 
-        if channel == None or channel.strip() ==  '':
-            log.debug('no channel requested, returning landing page')
+        if channel == None or channel.strip() == "":
+            log.debug("no channel requested, returning landing page")
 
             channel = str(uuid.uuid4())
 
-            return render_template('landing.html', channel=channel)
+            return render_template("landing.html", channel=channel)
         else:
-            log.debug('channel requested: ' + channel)
+            log.debug("channel requested: " + channel)
 
             channel = html.escape(channel)
-            
-            return render_template('chat.html', channel=channel)
+
+            return render_template("chat.html", channel=channel)

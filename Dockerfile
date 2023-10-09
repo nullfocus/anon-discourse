@@ -1,5 +1,7 @@
 FROM python:3.11.5-alpine
 
+ENV PIP_ROOT_USER_ACTION=ignore
+
 WORKDIR /usr/src/app
 
 COPY src/. /usr/src/app 

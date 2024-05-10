@@ -1,6 +1,6 @@
 # anon-discourse
 
-An independent webapp which allows a group to spin up an anonymous chat group and invite others.
+A webapp which hosts anonymous chat groups.
 
 ## Setup
 

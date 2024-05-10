@@ -21,7 +21,7 @@ An independent webapp which allows a group to spin up an anonymous chat group an
 - [x] Linter! 
 - [ ] Tests!
 - [ ] Improved logging
-- [ ] Get rid of page() function and use templates
+- [ ] Get rid of page() function and use templates for 404 and error handling
 
 ### larger efforts
 - [x] Leverage "prod ready" server, like nginx, gunicorn, etc
